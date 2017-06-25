@@ -1,0 +1,49 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Perfil</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+
+    <ion-item>
+        <ion-avatar item-left *ngIf="url">
+          <img [src]="url">
+        </ion-avatar>
+        <!--{{ usuarioLogado.nome }}-->
+        <ion-label stacked>Nome</ion-label>
+        <ion-input type="text" disabled="{{editando}}" [(ngModel)]="usuarioLogado.nome"></ion-input>
+        <!--button ion-button outline item-right (click)="tiraFoto()">
+            <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+        </button-->
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Endereço</ion-label>
+        <ion-input type="text" disabled="{{editando}}" [(ngModel)]="usuarioLogado.endereco"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Data de nascimento</ion-label>
+        <ion-input type="text" disabled="{{editando}}" [(ngModel)]="usuarioLogado.dataNascimento"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Telefone</ion-label>
+        <ion-input type="text" disabled="{{editando}}" [(ngModel)]="usuarioLogado.telefone"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>E-mail</ion-label>
+        <ion-input type="text" disabled="{{editando}}" [(ngModel)]="usuarioLogado.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Senha</ion-label>
+        <ion-input type="{{tipo}}" disabled="{{editando}}" [(ngModel)]="usuarioLogado.senha"></ion-input>
+        <button ion-button icon-only outline item-right icon-left (click)="show()">
+          <ion-icon ios="{{ eyeOpennedOs }}" md="{{ eyeOpennedMd }}"></ion-icon>
+        </button>
+        
+    </ion-item>
+    <button ion-button block color="secondary" (click)="acaoBotao()">{{textoBotao}}</button>
+  </ion-card>
+</ion-content>

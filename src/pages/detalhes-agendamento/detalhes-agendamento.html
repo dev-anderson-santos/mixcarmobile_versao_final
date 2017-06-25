@@ -1,0 +1,44 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Detalhes do Agendamento</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-item>
+        <ion-icon ios="ios-car" md="md-car" item-left></ion-icon>
+        <h2>{{ agendamento.carro_modelo }}</h2>
+        <p>{{ agendamento.agendamento_valor | currency:'BRL':true}}</p>
+    </ion-item>
+
+        <ion-thumbnail item-left>
+          <img src="{{ agendamento.carro_img }}">
+        </ion-thumbnail>
+
+        <ion-card-content>
+          <p><ion-icon icon-left clear small ios="ios-calendar" md="md-calendar"></ion-icon> Data do agendamento: {{ agendamento.agendamento_data | date:"dd/MM/yy" }}</p>
+          <p><ion-icon icon-left clear small ios="ios-alarm" md="md-alarm"></ion-icon> Horário: {{ agendamento.agendamento_horario }}</p>
+        </ion-card-content>
+  
+  <ion-row>
+    <ion-col>
+      <button ion-button icon-left clear small (click)="agendamentoParaSerAlterado()">
+        <ion-icon ios="ios-create" md="md-create"></ion-icon>
+        Alterar
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small color="danger" (click)="acao()">
+        <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+        Cancelar agendamento
+      </button>
+    </ion-col>
+  </ion-row>
+
+  </ion-card>
+
+
+</ion-content>

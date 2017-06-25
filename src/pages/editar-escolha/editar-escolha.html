@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Editando agendamento
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-card>
+        <ion-card-content>
+            <ion-item-group>
+                <ion-item-divider color="light">
+                    <ion-icon ios="ios-car" md="md-car" item-left></ion-icon>
+                    Veiculo escolhido
+                 </ion-item-divider>
+                
+                    <ion-item>
+                        <ion-thumbnail item-left>
+                        <img src="{{ agendamento.carro_img }}">
+                        </ion-thumbnail>
+                        <h2>{{ agendamento.carro_modelo }}</h2>
+                        <p>R$ {{ agendamento.carro_preco }}</p>
+                        
+                    </ion-item>
+            </ion-item-group>
+
+            <ion-item-group>
+                    <ion-item-divider color="light">
+                        <ion-icon ios="ios-options" md="md-options" item-left></ion-icon>
+                            Acessorios
+                    </ion-item-divider>
+                    <ion-item *ngFor="let acessorio of acessorios">
+                        <ion-label>
+                            <h2>{{ acessorio.acessorio_nome }}</h2>
+                            <h2>R$ {{ acessorio.acessorio_preco }}</h2>
+                        </ion-label>
+                        <ion-toggle #toggle color="secondary" (ionChange)="atualizaTotal(toggle.checked, acessorio)"></ion-toggle>
+                    </ion-item>
+            </ion-item-group>
+
+            <ion-item-divider color="light">
+                TOTAL: {{ agendamento.agendamento_valor }}
+            </ion-item-divider>
+
+        </ion-card-content>
+    </ion-card>
+    <button ion-button color="secondary" block (click)="avancaNoAgendamento()">Avançar no agendamento</button>
+</ion-content>

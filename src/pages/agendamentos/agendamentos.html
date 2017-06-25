@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Agendamentos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+ <ion-list>
+     
+   <ion-item *ngFor="let agendamento of agendamentos" (click)="seleciona(agendamento)">
+     <h2>{{ agendamento.carro_modelo }}</h2>
+     <h2>{{ agendamento.agendamento_valor | currency:'BRL':true }}</h2>
+     <ion-avatar item-left>
+          <img src="{{ agendamento.carro_img }}">
+        </ion-avatar>
+   </ion-item>
+ </ion-list>
+</ion-content>

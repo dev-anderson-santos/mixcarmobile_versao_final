@@ -1,0 +1,52 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Novo</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form [formGroup]="cadastro" (ngSubmit)="cadastrarNovaConta()">
+
+    <ion-item>
+      <ion-label stacked>Nome</ion-label>
+      <ion-input  name="nome" formControlName="nome" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Endereço</ion-label>
+      <ion-input  name="endereco" formControlName="endereco" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Telefone</ion-label>
+      <ion-input name="telefone" formControlName="telefone" type="text" maxlength="15"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>CPF</ion-label>
+      <ion-input name="cpf" formControlName="cpf" type="text" maxlength="14"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>E-mail</ion-label>
+      <ion-input name="email" formControlName="email" type="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Senha</ion-label>
+      <ion-input name="senha" formControlName="senha" type="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Data de Nascimento</ion-label>
+      <ion-datetime displayFormat="DD/MM/YY" name="dataNascimento" formControlName="dataNascimento" type="date"></ion-datetime>
+    </ion-item>
+   
+      <button [disabled]="cadastro.invalid" ion-button block color="secondary">Criar conta</button>
+    
+  </form>
+</ion-content>

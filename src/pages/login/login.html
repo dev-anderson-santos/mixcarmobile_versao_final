@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+        
+
+  <img src="img/icon2.png"/>  
+
+ <form (submit)="efetuaLogin(usuario)">
+    <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input [(ngModel)]="usuario.email" name="email" type="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label floating>Senha</ion-label>
+        <ion-input [(ngModel)]="usuario.senha" name="senha" type="password"></ion-input>
+    </ion-item>
+
+    <button ion-button block color="secondary">ENTRAR</button>
+  </form>
+  <ion-item (click)="cadastrarNovaConta()" text-right>Cadastre-se</ion-item>
+  
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      MixCar Mobile
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!--ion-list>
+    <ion-item *ngFor="let carro of carros" (click)="seleciona(carro)">
+      {{carro.nome}} - R${{carro.preco}}
+    </ion-item>
+  </ion-list-->
+  <ion-fab top right edge>
+      <button ion-fab mini color="danger" (click)="carregarListaDeCarros()">
+        <ion-icon name="refresh" color="light"></ion-icon>
+      </button>
+  </ion-fab>
+
+    <ion-list>
+      <ion-item *ngFor="let carro of carros" (click)="seleciona(carro)"> 
+        <ion-thumbnail item-left>
+          <img src="{{ carro.img }}">
+        </ion-thumbnail>
+          <h2>{{ carro.modelo }}</h2>
+          <p>{{ carro.preco | currency:'BRL':true}}</p>
+        
+      </ion-item>
+  </ion-list>
+
+</ion-content>

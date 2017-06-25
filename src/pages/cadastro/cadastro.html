@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Finalizando...</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <h2>{{ carro.modelo }}</h2>
+  <p>{{ precoTotal | currency:'BRL':true }}</p>
+
+  <form (ngSubmit)="agendaOuAtualiza()">
+
+    <ion-item (click)="selecionaData()">
+      <ion-label stacked>Data do agendamento</ion-label>
+       <ion-datetime disabled="false" [(ngModel)]="agendamento.data" name="data" displayFormat="DD/MM/YY"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Horário</ion-label>
+        <ion-select [(ngModel)]="agendamento.horario" [ngModelOptions]="{standalone: true}">
+          <ion-option>{{agendamento.horario}}</ion-option>
+          <ion-option *ngFor="let horario of horarios">{{ horario }}</ion-option>
+        </ion-select>
+    </ion-item>
+
+    <button ion-button block type="submit" color="secondary">Finalizar Agendamento</button>
+  </form>
+
+</ion-content>

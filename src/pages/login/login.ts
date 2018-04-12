@@ -11,9 +11,6 @@ import { Usuario } from "../../domain/usuario/Usuario";
 })
 export class LoginPage {
   private _usuarioLogado: Usuario;
-
-  /*public email: string = 'joao@alura.com.br';
-  public senha: string = 'alura123';*/
   public usuario: Usuario;
 
   constructor(
